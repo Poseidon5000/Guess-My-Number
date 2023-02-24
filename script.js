@@ -56,15 +56,26 @@ checkBtn.addEventListener("click", function(){
       document.querySelector(".message").textContent = " 🎉 Correct Answer";
       document.querySelector(".number").textContent = randomNumber;
       body.style.backgroundColor = "purple";
+      document.querySelector('.number').style.width = '25rem';
+
+      //IMPLEMENTING HIGH SCORES
+
+       if (score > highScore) {
+      highScore = score;
+      document.querySelector('.highscore').textContent = highScore;
+    }
     };
 
     
 })
 
 againBtn.addEventListener("click", function(){
-document.querySelector(".score").textContent = 20;
+score = 20
+document.querySelector(".score").textContent = score;
  let randomNumber = Math.trunc(Math.random() * 20) + 1;
 body.style.backgroundColor = "#222";
 document.querySelector(".message").textContent = "Start guessing...";
 document.querySelector(".guess").value = ""
+ document.querySelector('.number').style.width = '15rem';
+   document.querySelector('.number').textContent = '?';
 })
